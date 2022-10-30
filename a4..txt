@@ -30,11 +30,17 @@
   928   scp -P 22 mohit@172.31.197.164:/home/mohit/Assignment-4/CS-131-HW-4/graphOfClusters.svg graphOfClusters.svg
   
  #Q4
-  979  grep -iFf retweets.txt downloaded_tweets_extend_original_nolf2.tsv | cut -f4 | sort | uniq -c | sort -rnb | head -30| awk'{print $2}' > TopThirtyHashTags.txt
-  980  grep -iFf retweets.txt downloaded_tweets_extend_original_nolf2.tsv | cut -f4 | sort | uniq -c | sort -rnb | head -30| awk '{print $2}' > TopThirtyHashTags.txt
+  979  grep -iFf retweets.txt downloaded_tweets_extend_original_nolf2.tsv | uniq -c | cut -f 4| sort -rn | head -30| awk'{print $2}' > TopThirtyHashTags.txt
   981  vi TopThirtyHashTags.txt 
   
   #Q5 Check network graphs.
   
-  #Q6
+ #Q6
+  
+  Network Graph 1 from Assignment 3 shows us the relationship of user's between which user replied to whom.
+  It is a undirected graph, whereever majority of clustering of nodes and edges occurs, it seems that in that particular region the user has replied a lot to other     user. I think there might also be some sort of bot replying to other user in dense regions.
+  
+ NetworkGraph 2 from Assignment 4 shows us a relationship between user's who have tetweeted each other. 
+ The node represent the user's.Edges represent the relationship between one-to-one or many-to-many users.
+ The graph to me seems normal, there seem's to be no bot replying large number of tweets, as data set is fairly distributed.
  
